@@ -1,5 +1,7 @@
 package me.ethan.productgenerator;
 
+import java.util.Objects;
+
 public class Product {
 
     private int ID;
@@ -12,6 +14,19 @@ public class Product {
         this.name = name;
         this.description = description;
         this.price = price;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return ID == product.ID && Double.compare(product.price, price) == 0 && name.equals(product.name) && description.equals(product.description);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(ID, name, description, price);
     }
 
     public int getID() {

@@ -68,7 +68,7 @@ public class UnitTest {
         p1.setPrice(1.99);
         System.out.println(p1.toCSVDataRecord());
         System.out.println(p2.toCSVDataRecord());
-        assertEquals(true, p1.toCSVDataRecord().equals(p2.toCSVDataRecord()));
+        assertEquals(true, p1.equals(p2));
 
 
     }
